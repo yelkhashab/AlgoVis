@@ -1,0 +1,163 @@
+/* Base styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light mode by default */
+body.light-mode {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.controls, .runtime-info {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.dark-mode .controls, .dark-mode .runtime-info {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+button {
+    background-color: #007aff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #005ecb;
+}
+
+/* Range input styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 8px 0;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+/* Container styling */
+#array-container {
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.dark-mode #array-container {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.array-bar {
+    background-color: #007aff;
+    width: 10px;
+    margin: 0 1px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #array-container {
+        width: 100%;
+        height: 200px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .speed-control, .runtime-info {
+        padding: 8px;
+    }
+}
+
+/* Dark mode toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Ensuring the dark mode styles are applied correctly */
+.dark-mode .slider {
+    background-color: #666;
+}
+
+.dark-mode .slider:before {
+    background-color: #fff;
+}

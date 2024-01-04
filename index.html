@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="bubble-sort-btn">Bubble Sort</button>
+        <button id="quick-sort-btn">Quick Sort</button>
+        <button id="merge-sort-btn">Merge Sort</button>
+        <button id="generate-array-btn">Generate New Array</button>
+
+        <!-- Speed controller -->
+        <div class="speed-control">
+            <label for="speedRange">Visualization Speed:</label>
+            <input type="range" id="speedRange" min="1" max="1000" value="100">
+            <span id="speedDisplay">100ms</span>
+        </div>
+        
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+        </div>
+    </div>
+    
+    <!-- Runtime and complexity display -->
+    <div class="runtime-info">
+        <div>Runtime: <span id="runtimeValue">0ms</span></div>
+        <div>Time Complexity: <span id="timeComplexityValue"></span></div>
+        <div>Space Complexity: <span id="spaceComplexityValue"></span></div>
+    </div>
+    
+    <div id="array-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
